@@ -1,13 +1,13 @@
 
-abstract class TempleteDeImpostoCondicional implements Imposto {
+abstract class TempleteDeImpostoCondicional extends Imposto {
 
 	@Override
-	public double calcula(Orcamento orcamento) {
+	public final double calcula(Orcamento orcamento) {
 		
 		if(deveUsarMaximaTaxacao(orcamento)) {
-			return maximaTaxacao(orcamento);
+			return maximaTaxacao(orcamento) + calculaOutroImposto(orcamento);
 		} 
-		return minimaTaxacao(orcamento);
+		return minimaTaxacao(orcamento) + calculaOutroImposto(orcamento);
 		
 	}
 
