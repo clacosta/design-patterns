@@ -1,4 +1,8 @@
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
+
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 public class TesteAcoes {
 
@@ -9,7 +13,9 @@ public class TesteAcoes {
 				.comValor(200.0)
 				.constroi();
 		
-		NotaFiscalBuilder builder = new NotaFiscalBuilder()
+		List<AcaoAposGerarNota> listaDeAcoes = Arrays.asList(new EnviadorDeEmail(), new NotaFiscalDao(), new EnviadorDeSms(), new Impressora(), new Multiplicador(2.0));
+		
+		NotaFiscalBuilder builder = new NotaFiscalBuilder(listaDeAcoes)
 		.paraEmpresa("CI&T")
 		.comCNPJ("12.345.678/0001-12")
 		.com(item1)
@@ -18,11 +24,11 @@ public class TesteAcoes {
 		.comObservacoes("observacoes")
 		.naData(Calendar.getInstance());
 		
-		builder.adicionaAcao(new EnviadorDeEmail());
-		builder.adicionaAcao(new NotaFiscalDao());
-		builder.adicionaAcao(new EnviadorDeSms());
-		builder.adicionaAcao(new Impressora());
-		builder.adicionaAcao(new Multiplicador(2.0));
+//		builder.adicionaAcao(new EnviadorDeEmail());
+//		builder.adicionaAcao(new NotaFiscalDao());
+//		builder.adicionaAcao(new EnviadorDeSms());
+//		builder.adicionaAcao(new Impressora());
+//		builder.adicionaAcao(new Multiplicador(2.0));
 		
 		NotaFiscal nf = builder.constroi();
 		

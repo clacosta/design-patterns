@@ -18,6 +18,10 @@ public class NotaFiscalBuilder {
         this.todasAsAcoesASeremExecutadas = new ArrayList<AcaoAposGerarNota>();
     }
 	
+	public NotaFiscalBuilder(List<AcaoAposGerarNota> lista) {
+        this.todasAsAcoesASeremExecutadas = lista;
+      }
+	
 	public void adicionaAcao(AcaoAposGerarNota acao) {
 		this.todasAsAcoesASeremExecutadas.add(acao);
 	}
