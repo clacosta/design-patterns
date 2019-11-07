@@ -12,6 +12,10 @@ public class NotaFiscalBuilder {
 	private String observacoes;
 	private Calendar data;
 	
+	public NotaFiscalBuilder() {
+        this.data = Calendar.getInstance();
+    }
+	
 	public NotaFiscalBuilder paraEmpresa(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
 		return this;
@@ -22,7 +26,7 @@ public class NotaFiscalBuilder {
 		return this;
 	}
 	
-	public NotaFiscalBuilder comItem(ItemDaNota item) {
+	public NotaFiscalBuilder com(ItemDaNota item) {
 		todosItens.add(item);
 		valorTotal += item.getValor();
 		impostos += item.getValor() * 0.05;
@@ -34,8 +38,8 @@ public class NotaFiscalBuilder {
 		return this;
 	}
 	
-	public NotaFiscalBuilder naDataAtual () {
-		data = Calendar.getInstance();
+	public NotaFiscalBuilder naData(Calendar data) {
+		this.data = data;
 		return this;
 	}
 	

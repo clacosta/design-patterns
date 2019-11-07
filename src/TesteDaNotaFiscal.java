@@ -1,3 +1,4 @@
+import java.util.Calendar;
 
 public class TesteDaNotaFiscal {
 
@@ -11,11 +12,11 @@ public class TesteDaNotaFiscal {
 		NotaFiscalBuilder builder = new NotaFiscalBuilder()
 		.paraEmpresa("CI&T")
 		.comCNPJ("12.345.678/0001-12")
-		.comItem(item1)
-		.comItem(new ItemDaNota("item 2", 300.0))
-		.comItem(new ItemDaNota("item 3", 400.0))
+		.com(item1)
+		.com(new ItemDaNota("item 2", 300.0))
+		.com(new ItemDaNota("item 3", 400.0))
 		.comObservacoes("observacoes")
-		.naDataAtual();
+		.naData(Calendar.getInstance());
 		
 		NotaFiscal nf = builder.constroi();
 		
