@@ -22,6 +22,7 @@ public class TesteAcoes {
 		builder.adicionaAcao(new NotaFiscalDao());
 		builder.adicionaAcao(new EnviadorDeSms());
 		builder.adicionaAcao(new Impressora());
+		builder.adicionaAcao(new Multiplicador(2.0));
 		
 		NotaFiscal nf = builder.constroi();
 		
