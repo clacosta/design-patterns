@@ -1,6 +1,13 @@
 
 abstract class TempleteDeImpostoCondicional extends Imposto {
 
+	public TempleteDeImpostoCondicional(Imposto outroImposto) {
+        super(outroImposto);
+    }
+
+    public TempleteDeImpostoCondicional() {
+    }
+	
 	@Override
 	public final double calcula(Orcamento orcamento) {
 		

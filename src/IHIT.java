@@ -3,6 +3,12 @@ import java.util.List;
 
 public class IHIT extends TempleteDeImpostoCondicional {
 
+	public IHIT(Imposto outroImposto) {
+        super(outroImposto);
+    }
+    
+    public IHIT() {}
+	
 	@Override
 	protected double minimaTaxacao(Orcamento orcamento) {
 		return orcamento.getValor() * (0.01 * orcamento.getItens().size());

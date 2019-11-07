@@ -1,6 +1,12 @@
 
 public class IKCV extends TempleteDeImpostoCondicional {
 
+    public IKCV(Imposto outroImposto) {
+        super(outroImposto);
+    }
+    
+    public IKCV() {}
+    
 	private boolean temItemMaiorQue100ReaisNo(Orcamento orcamento) {
 		for(Item item : orcamento.getItens()) {
 			if(item.getValor() > 100) {

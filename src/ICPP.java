@@ -1,6 +1,12 @@
 
 public class ICPP extends TempleteDeImpostoCondicional {
 
+     public ICPP(Imposto outroImposto) {
+         super(outroImposto);
+     }
+     
+     public ICPP() {}
+	
 	@Override
 	public double minimaTaxacao(Orcamento orcamento) {
 		return orcamento.getValor() * 0.05;
